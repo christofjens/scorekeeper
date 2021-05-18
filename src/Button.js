@@ -1,0 +1,19 @@
+import './Button.css'
+import PropTypes from 'prop-types'
+
+Button.propTypes = {
+  isActive: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+}
+
+export default function Button({ children, isActive, onClick }) {
+  return (
+    <button
+      onClick={onClick}
+      className={isActive ? 'Button Button--active' : 'Button'}
+    >
+      {children}
+    </button>
+  )
+}

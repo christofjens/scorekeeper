@@ -1,0 +1,13 @@
+.Button {
+  padding: 7px;
+  height: 48px;
+  min-width: 48px;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.Button--active {
+  background-color: lightblue;
+}
