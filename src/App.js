@@ -26,7 +26,9 @@ function App() {
           </li>
         ))}
       </ul>
-      <Button onClick={resetScores}>Reset Scores</Button>
+      <Button isActive onClick={resetScores}>
+        Reset Scores
+      </Button>
       <Button onClick={resetAll}>Reset All</Button>
     </div>
   )

@@ -1,7 +1,7 @@
 import React from 'react'
-import './Player.css'
 import PropTypes from 'prop-types'
 import Button from './Button'
+import styled from 'styled-components'
 
 Player.propTypes = {
   onMinus: PropTypes.func.isRequired,
@@ -12,15 +12,21 @@ Player.propTypes = {
 
 export default function Player({ name, score, onMinus, onPlus }) {
   return (
-    <section className="Player">
-      <div className="Player__textbox flex1">{name}</div>
-      <Button className="flex2" onClick={onMinus}>
-        -
-      </Button>
-      <div className="Player__textbox flex2">{score}</div>
-      <Button className="flex2" onClick={onPlus}>
-        +
-      </Button>
-    </section>
+    <Wrapper>
+      <div>{name}</div>
+      <Button onClick={onMinus}>-</Button>
+      <div>{score}</div>
+      <Button onClick={onPlus}>+</Button>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+
+  div {
+    padding: 20px;
+  }
+`
