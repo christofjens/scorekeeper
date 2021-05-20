@@ -1,18 +1,16 @@
-import './App.css'
-import Player from './Player'
-import Button from './Button'
-import PlayerForm from './PlayerForm'
 import { useState } from 'react'
+import './App.css'
+import Button from './components/Button'
+import Player from './components/Player'
+import PlayerForm from './components/PlayerForm'
 
 function App() {
-  const [players, setPlayers] = useState([
-    { name: 'Mary Jane', score: 32 },
-    { name: 'Peter Parker', score: 30 },
-  ])
+  const [players, setPlayers] = useState([])
 
   return (
     <div className="App">
-      <PlayerForm onSubmit={createPlayer}></PlayerForm>
+      <PlayerForm onSubmit={createPlayer} />
+
       <ul className="App__player-list">
         {players.map((player, index) => (
           <li>
@@ -26,10 +24,11 @@ function App() {
           </li>
         ))}
       </ul>
-      <Button isActive onClick={resetScores}>
-        Reset Scores
-      </Button>
-      <Button onClick={resetAll}>Reset All</Button>
+
+      <div className="App__buttons">
+        <Button onClick={resetScores}>Reset scores</Button>
+        <Button onClick={resetAll}>Reset all</Button>
+      </div>
     </div>
   )
 
@@ -54,4 +53,5 @@ function App() {
     setPlayers([...players, { name, score: 0 }])
   }
 }
+
 export default App

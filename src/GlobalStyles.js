@@ -3,7 +3,8 @@ import styled, { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
-    font-family: monospace, sans-serif;
+    font-size: 1rem;
+    font-family: sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
