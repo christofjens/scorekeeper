@@ -10,7 +10,7 @@ export default function App() {
   const [history, setHistory] = useState([])
   const [currentGame, setCurrentGame] = useState({})
   const { players, nameOfGame } = currentGame
-  const onNavigate = setCurrentPageId
+  // const showNavigation = currentPageId
 
   return (
     <AppGrid>
@@ -29,13 +29,24 @@ export default function App() {
       {currentPageId === 'history' && (
         <HistoryPage games={history} onNavigate={setCurrentPageId} />
       )}
-      <Navigation
-        onNavigate={onNavigate}
-        pages={[
-          { title: 'Create', id: 'create' },
-          { title: 'History', id: 'history' },
-        ]}
-      />
+      {currentPageId === 'create' && (
+        <Navigation
+          onNavigate={setCurrentPageId}
+          pages={[
+            { title: 'Create', id: 'create' },
+            { title: 'History', id: 'history' },
+          ]}
+        />
+      )}
+      {currentPageId === 'history' && (
+        <Navigation
+          onNavigate={setCurrentPageId}
+          pages={[
+            { title: 'Create', id: 'create' },
+            { title: 'History', id: 'history' },
+          ]}
+        />
+      )}
     </AppGrid>
   )
 

@@ -1,25 +1,26 @@
 import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
 import Button from '../components/Button'
-import Navigation from '../components/Navigation'
+import LabeledInput from '../components/LabeledInput'
 
 CreatePage.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onNavigate: PropTypes.func.isRequired,
 }
 
-export default function CreatePage({ onSubmit, onNavigate }) {
+export default function CreatePage({ onSubmit }) {
   return (
     <Grid>
-      <Form onSubmit={handleSubmit}>
-        <label>
-          Name of Game:
-          <input name="name" type="text" placeholder="e.g. Carcassonne" />
-        </label>
-        <label>
-          Player Names:
-          <input name="players" type="text" placeholder="e.g. Jim, Mary, Ben" />
-        </label>
+      <Form aria-label="Create Game" onSubmit={handleSubmit}>
+        <LabeledInput
+          label="Name of Game"
+          name="name"
+          placeholder="e.g. Carcassonne"
+        />
+        <LabeledInput
+          label="Names of Players"
+          name="players"
+          placeholder="e.g. Peter, Paul, Mary"
+        />
         <Button>Create Game</Button>
       </Form>
     </Grid>
