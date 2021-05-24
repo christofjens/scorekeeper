@@ -15,7 +15,7 @@ HistoryPage.propTypes = {
   onNavigate: PropTypes.func.isRequired,
 }
 
-export default function HistoryPage({ games }) {
+export default function HistoryPage({ games, onNavigate }) {
   return (
     <Grid>
       <div>
